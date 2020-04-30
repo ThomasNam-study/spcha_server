@@ -44,4 +44,23 @@ public class Board implements Serializable
 
 	@OneToOne(fetch = FetchType.LAZY)
 	private User user;
+
+	public void setCreateDateNow ()
+	{
+		createdDate = LocalDateTime.now ();
+	}
+
+	public void setUpdatedDateNow ()
+	{
+		updatedDate = LocalDateTime.now ();
+	}
+
+	public void update (Board board)
+	{
+		this.title = board.getTitle ();
+		this.subTitle = board.getSubTitle ();
+		this.content = board.getContent ();
+		this.boardType = board.getBoardType ();
+		this.updatedDate = LocalDateTime.now ();
+	}
 }
