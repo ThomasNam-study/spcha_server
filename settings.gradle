@@ -1,0 +1,4 @@
+rootProject.name = 'spcha_server'
+
+include "data-rest"
+include "rest-web"
